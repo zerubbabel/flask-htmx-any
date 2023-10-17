@@ -10,7 +10,6 @@ def home():
 @app.route("/submit", methods=["POST"])
 def submit():
     global_book_object = Book()
-
     title = request.form["title"]
     author_name = request.form["author"]
 
