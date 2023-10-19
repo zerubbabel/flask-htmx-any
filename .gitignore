@@ -1,4 +1,6 @@
 env/
 .DS_Store
 *.db
-/__pycache__/
+__pycache__/
+*.py[cod]
+
