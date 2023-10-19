@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
 
+
 persistent_path = os.getenv("PERSISTENT_STORAGE_DIR", os.path.dirname(os.path.realpath(__file__)))
 
 app = Flask(__name__)
@@ -12,7 +13,12 @@ app.config["SQLALCHEMY_DATABASE_URI"] = f'sqlite:///{db_path}'
 app.config["SQLALCHEMY_ECHO"] = False
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
+
+
 db = SQLAlchemy()
+
+from .student.views import student_bp
+app.register_blueprint(student_bp,url_prefix='/student')
 
 from app import views
 from app import models
