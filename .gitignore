@@ -1,5 +1,4 @@
 env/
-app/__pycache__/
 .DS_Store
-app/sqlite.db
+*.db
 /__pycache__/
